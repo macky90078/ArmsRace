@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmsRace", "ArmsRace.csproj", "{A492A891-3822-31F2-20B3-EABD054659B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmsRace.Editor", "ArmsRace.Editor.csproj", "{373D22E5-75D8-5141-661E-D6A5BC536087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A492A891-3822-31F2-20B3-EABD054659B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A492A891-3822-31F2-20B3-EABD054659B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A492A891-3822-31F2-20B3-EABD054659B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A492A891-3822-31F2-20B3-EABD054659B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{373D22E5-75D8-5141-661E-D6A5BC536087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373D22E5-75D8-5141-661E-D6A5BC536087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373D22E5-75D8-5141-661E-D6A5BC536087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373D22E5-75D8-5141-661E-D6A5BC536087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
