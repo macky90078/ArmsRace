@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class CameraController : MonoBehaviour
 {
-	private float currentX = 0.0f;
+
+    public int playerId = 0; // The Rewired player id of this character
+
+    private float currentX = 0.0f;
 	private float currentY = 45.0f;
 	private float sensitivityX = 4.0f;
 	private float sensitivityY = 1.0f;
@@ -17,6 +21,14 @@ public class CameraController : MonoBehaviour
     public float cameraDistance = 10.0f;
 	public Vector3 cameraOffset = new Vector3 (0,1,5);
 	public float smoothSpeed = 0.125f;
+
+    private Player playerControl; // The Rewired Player
+
+    private void Awake()
+    {
+        // Get the Rewired object for this player and keep it for the duration of the character's lifetime
+        playerControl = ReInput.players.GetPlayer(playerId);
+    }
 
     private void Start()
     {
@@ -32,8 +44,8 @@ public class CameraController : MonoBehaviour
 
 	private void HandleInput()
 	{
-		currentX += Input.GetAxis("Mouse X");
-		currentY += Input.GetAxis("Mouse Y");
+        currentX += playerControl.GetAxis("Move RHorizontal");
+        currentY += playerControl.GetAxis("Move RVertical");
 	}
 
     private void LateUpdate()
