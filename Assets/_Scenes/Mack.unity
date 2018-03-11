@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 154701420}
   - component: {fileID: 154701419}
   - component: {fileID: 154701418}
+  - component: {fileID: 154701422}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -194,6 +195,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &154701422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 154701417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &272130307
 Prefab:
   m_ObjectHideFlags: 0
@@ -345,6 +358,7 @@ MonoBehaviour:
   cameraDistance: 10
   cameraOffset: {x: 0, y: 1, z: 5}
   smoothSpeed: 0.125
+  m_cameraRotationSpeed: 2
 --- !u!1001 &410519729
 Prefab:
   m_ObjectHideFlags: 0
@@ -384,25 +398,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1592374558344730, guid: 717fe6812323ae44dbe2f430aa76ef77, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114389202109545412, guid: 717fe6812323ae44dbe2f430aa76ef77,
-        type: 2}
-      propertyPath: m_turnSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 114389202109545412, guid: 717fe6812323ae44dbe2f430aa76ef77,
         type: 2}
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 351697610}
-    - target: {fileID: 114389202109545412, guid: 717fe6812323ae44dbe2f430aa76ef77,
-        type: 2}
-      propertyPath: force
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 717fe6812323ae44dbe2f430aa76ef77, type: 2}
   m_IsPrefabParent: 0

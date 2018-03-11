@@ -7,18 +7,22 @@ public class ArmadilloController : MonoBehaviour {
 
     public int playerId = 0; // The Rewired player id of this character
 
-    private Rigidbody mybody;
-    public float force;
+    private Rigidbody m_rb;
 
     [SerializeField] private Camera m_camera;
 
-    [SerializeField] private float m_turnSpeed;
+    [SerializeField] private float speed = 5;
+    [SerializeField] private float turnSpeed = 10;
 
-    public Vector3 direction;
+    [SerializeField] private float m_jumpForce;
 
-    private bool m_movementInput = false;
+    private float m_fHorizontalInput;
+    private float m_fVerticalInput;
 
-    public Quaternion m_rot;
+    private Vector3 forceDirection;
+    private Vector3 turnDirection;
+
+    public bool m_isGrounded;
 
     private Player player; // The Rewired Player
 
@@ -30,45 +34,53 @@ public class ArmadilloController : MonoBehaviour {
 
     private void Start()
     {
-        mybody = this.GetComponent<Rigidbody>();
+        m_rb = this.GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        setRotation();
-        if(player.GetAxis("Move LHorizontal") != 0 || player.GetAxis("Move LVertical") != 0)
+        m_fVerticalInput = player.GetAxis("Move LVertical");
+        m_fHorizontalInput = player.GetAxis("Move LHorizontal");
+
+        if(player.GetButtonDown("A Button") && m_isGrounded)
         {
-            m_movementInput = true;
-        }
-        else
-        {
-            m_movementInput = false;
+            m_rb.AddForce(m_jumpForce * new Vector3(0, 1, 0));
         }
     }
 
     private void FixedUpdate()
     {
-        if(m_movementInput)
+        CheckIfGrounded();
+        Rolling();
+    }
+
+    void Rolling()
+    {
+        forceDirection = m_camera.transform.forward;
+        turnDirection = m_camera.transform.right;
+        forceDirection = new Vector3(forceDirection.x, 0, forceDirection.z);
+        turnDirection = new Vector3(turnDirection.x, 0, turnDirection.z);
+
+        m_rb.AddForce(forceDirection.normalized * speed * (m_fVerticalInput));
+        m_rb.AddForce(turnDirection.normalized * turnSpeed * (m_fHorizontalInput));
+    }
+
+    private void CheckIfGrounded()
+    {
+        RaycastHit[] hits;
+
+        Vector3 positionToCheck = transform.position;
+        hits = Physics.RaycastAll(positionToCheck, new Vector3(0, -1, 0), 1f);
+
+
+
+        if(hits.Length > 0)
         {
-            mybody.AddForce(force * direction);
+            m_isGrounded = true;
         }
-    }
-
-    private void CheckInput()
-    {
-        float h = player.GetAxis("Move LHorizontal");
-        float v = player.GetAxis("Move LVertical");
-        Vector3 movement = new Vector3(h, 0.0f, v);
-        mybody.AddForce(force * -direction.normalized);
-    }
-
-    void setRotation()
-    {
-        Vector3 rightStickPos = new Vector3(player.GetAxis("Move RHorizontal"), player.GetAxis("Move RVertical"), 0f);
-        Vector3 lookPos = m_camera.ScreenToWorldPoint(rightStickPos);
-        lookPos = lookPos - transform.position;
-        float angle = Mathf.Atan2(lookPos.z, lookPos.x) * Mathf.Rad2Deg;
-         m_rot = Quaternion.AngleAxis(angle, new Vector3(1,0,1));
-        direction = m_rot * Vector3.forward;
+        else
+        {
+            m_isGrounded = false;
+        }
     }
 }

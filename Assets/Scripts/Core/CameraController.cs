@@ -22,6 +22,8 @@ public class CameraController : MonoBehaviour
 	public Vector3 cameraOffset = new Vector3 (0,1,5);
 	public float smoothSpeed = 0.125f;
 
+    [SerializeField] private float m_cameraRotationSpeed = 2f;
+
     private Player playerControl; // The Rewired Player
 
     private void Awake()
@@ -44,8 +46,8 @@ public class CameraController : MonoBehaviour
 
 	private void HandleInput()
 	{
-        currentX += playerControl.GetAxis("Move RHorizontal");
-        currentY += playerControl.GetAxis("Move RVertical");
+        currentX += playerControl.GetAxis("Move RHorizontal") * m_cameraRotationSpeed;
+        currentY += playerControl.GetAxis("Move RVertical") * m_cameraRotationSpeed;
 	}
 
     private void LateUpdate()
