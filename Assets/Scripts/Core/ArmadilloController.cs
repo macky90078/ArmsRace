@@ -1,31 +1,86 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class ArmadilloController : MonoBehaviour {
 
-    private Rigidbody mybody;
-    public float force;
+    public int playerId = 0; // The Rewired player id of this character
 
+    private Rigidbody m_rb;
 
-    // Use this for initialization
+    [SerializeField] private Camera m_camera;
+
+    [SerializeField] private float speed = 5;
+    [SerializeField] private float turnSpeed = 10;
+
+    [SerializeField] private float m_jumpForce;
+
+    private float m_fHorizontalInput;
+    private float m_fVerticalInput;
+
+    private Vector3 forceDirection;
+    private Vector3 turnDirection;
+
+    public bool m_isGrounded;
+
+    private Player player; // The Rewired Player
+
+    private void Awake()
+    {
+        // Get the Rewired object for this player and keep it for the duration of the character's lifetime
+        player = ReInput.players.GetPlayer(playerId);
+    }
+
     private void Start()
     {
-        mybody = this.GetComponent<Rigidbody>();
+        m_rb = this.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        m_fVerticalInput = player.GetAxis("Move LVertical");
+        m_fHorizontalInput = player.GetAxis("Move LHorizontal");
+
+        if(player.GetButtonDown("A Button") && m_isGrounded)
+        {
+            m_rb.AddForce(m_jumpForce * new Vector3(0, 1, 0));
+        }
+    }
+
     private void FixedUpdate()
     {
-        CheckInput();
+        CheckIfGrounded();
+        Rolling();
     }
 
-    private void CheckInput()
+    void Rolling()
     {
+        forceDirection = m_camera.transform.forward;
+        turnDirection = m_camera.transform.right;
+        forceDirection = new Vector3(forceDirection.x, 0, forceDirection.z);
+        turnDirection = new Vector3(turnDirection.x, 0, turnDirection.z);
 
-        float h = Input.GetAxis("Horizontal") * force * Time.deltaTime;
-        float v = Input.GetAxis("Vertical") * force * Time.deltaTime;
-        Vector3 movement = new Vector3(h, 0.0f, v);
-        mybody.AddForce(movement);
+        m_rb.AddForce(forceDirection.normalized * speed * (m_fVerticalInput));
+        m_rb.AddForce(turnDirection.normalized * turnSpeed * (m_fHorizontalInput));
+    }
+
+    private void CheckIfGrounded()
+    {
+        RaycastHit[] hits;
+
+        Vector3 positionToCheck = transform.position;
+        hits = Physics.RaycastAll(positionToCheck, new Vector3(0, -1, 0), 1f);
+
+
+
+        if(hits.Length > 0)
+        {
+            m_isGrounded = true;
+        }
+        else
+        {
+            m_isGrounded = false;
+        }
     }
 }
