@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1247593862532028}
+  m_IsPrefabParent: 1
+--- !u!1 &1068370826375920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4583120442149758}
+  - component: {fileID: 65583552895937680}
+  m_Layer: 0
+  m_Name: Bridgecollider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1247593862532028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4111347162671682}
+  - component: {fileID: 33981409330437144}
+  - component: {fileID: 23087286308064508}
+  m_Layer: 0
+  m_Name: Bridge 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1603153905895922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4814437387090028}
+  - component: {fileID: 65353035577710510}
+  m_Layer: 0
+  m_Name: Bridgecollider (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1712979506633588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4174994547134820}
+  - component: {fileID: 65309370145855708}
+  m_Layer: 0
+  m_Name: Bridgecollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1908140037347086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4583303429903786}
+  - component: {fileID: 65344440736380166}
+  m_Layer: 0
+  m_Name: Bridgecollider (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4111347162671682
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247593862532028}
+  m_LocalRotation: {x: -0.75523835, y: 0.020146346, z: 0.021753285, w: 0.6547794}
+  m_LocalPosition: {x: -39.201294, y: 11.975792, z: -11.843994}
+  m_LocalScale: {x: 6.076635, y: 3.9436111, z: 1.0000002}
+  m_Children:
+  - {fileID: 4174994547134820}
+  - {fileID: 4583120442149758}
+  - {fileID: 4814437387090028}
+  - {fileID: 4583303429903786}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -98.147995, y: 2.618988, z: 0.7859955}
+--- !u!4 &4174994547134820
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712979506633588}
+  m_LocalRotation: {x: 0.7008293, y: -0.008429927, z: -0.0069267927, w: 0.7132456}
+  m_LocalPosition: {x: 0.07839101, y: 3.9016905, z: -0.16013713}
+  m_LocalScale: {x: 5.3811297, y: 0.7101449, z: 1.7335901}
+  m_Children: []
+  m_Father: {fileID: 4111347162671682}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -9.152, y: 2.153, z: 0.19900002}
+--- !u!4 &4583120442149758
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068370826375920}
+  m_LocalRotation: {x: 0.7008293, y: -0.008429927, z: -0.0069267927, w: 0.7132456}
+  m_LocalPosition: {x: 0.023684908, y: 1.3083291, z: -0.049022663}
+  m_LocalScale: {x: 5.3811297, y: 0.48136967, z: 1.0408686}
+  m_Children: []
+  m_Father: {fileID: 4111347162671682}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -9.152, y: 2.153, z: 0.19900002}
+--- !u!4 &4583303429903786
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908140037347086}
+  m_LocalRotation: {x: 0.7071486, y: -0.0017157849, z: -0.00031164289, w: 0.70706284}
+  m_LocalPosition: {x: 0.03164987, y: -4.292835, z: -0.08968351}
+  m_LocalScale: {x: 4.960385, y: 0.48148066, z: 1.5990975}
+  m_Children: []
+  m_Father: {fileID: 4111347162671682}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -8.14, y: 3.246, z: 0.025}
+--- !u!4 &4814437387090028
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603153905895922}
+  m_LocalRotation: {x: 0.70078504, y: 0.009298507, z: 0.010492608, w: 0.7132348}
+  m_LocalPosition: {x: -0.01761329, y: -1.5779449, z: -0.032409184}
+  m_LocalScale: {x: 5.38195, y: 0.4813697, z: 2.1176062}
+  m_Children: []
+  m_Father: {fileID: 4111347162671682}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -9.151, y: 5.038, z: -0.26000002}
+--- !u!23 &23087286308064508
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247593862532028}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: bfc7d62234801aa4c8dab946b01f37de, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33981409330437144
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247593862532028}
+  m_Mesh: {fileID: 4300000, guid: 90ea67912a4953a4b8d162b08d717818, type: 3}
+--- !u!65 &65309370145855708
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712979506633588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65344440736380166
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908140037347086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65353035577710510
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603153905895922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65583552895937680
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068370826375920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
