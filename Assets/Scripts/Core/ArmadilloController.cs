@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
-public class ArmadilloController : MonoBehaviour {
-
+public class ArmadilloController : MonoBehaviour
+{
     public int playerId = 0; // The Rewired player id of this character
 
     private Rigidbody m_rb;
 
-    [SerializeField] private Camera m_camera;
+    [SerializeField] public Camera m_camera;
 
     [SerializeField] private float speed = 5;
     [SerializeField] private float turnSpeed = 10;
@@ -42,7 +42,7 @@ public class ArmadilloController : MonoBehaviour {
         m_fVerticalInput = player.GetAxis("Move LVertical");
         m_fHorizontalInput = player.GetAxis("Move LHorizontal");
 
-        if(player.GetButtonDown("A Button") && m_isGrounded)
+        if (player.GetButtonDown("A Button") && m_isGrounded)
         {
             m_rb.AddForce(m_jumpForce * new Vector3(0, 1, 0));
         }
@@ -72,9 +72,7 @@ public class ArmadilloController : MonoBehaviour {
         Vector3 positionToCheck = transform.position;
         hits = Physics.RaycastAll(positionToCheck, new Vector3(0, -1, 0), 1f);
 
-
-
-        if(hits.Length > 0)
+        if (hits.Length > 0)
         {
             m_isGrounded = true;
         }

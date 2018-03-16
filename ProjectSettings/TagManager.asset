@@ -19,6 +19,7 @@ TagManager:
   - Portal
   - Wall
   - WallR
+  - PlayerStart
   layers:
   - Default
   - TransparentFX
