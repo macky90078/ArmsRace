@@ -49,7 +49,7 @@ public class ExampleRailling : MonoBehaviour {
         foreach (GameObject go in meshes) {
             if (gameObject != null) {
                 if (Application.isPlaying) {
-                    Destroy(go);
+                  //  Destroy(go);
                 } else {
                     DestroyImmediate(go);
                 }

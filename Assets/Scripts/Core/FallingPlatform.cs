@@ -66,20 +66,20 @@ public class FallingPlatform : MonoBehaviour
 
     void PlatWiggle()
     {
-        float randX = Random.Range(1.0f, 2.0f);
-        float randY = Random.Range(1.0f, 2.0f);
-        float randZ = Random.Range(1.0f, 2.0f);
-        float randK = Random.Range(1.0f, 2.0f);
+        float randX = Random.Range(0.1f, 1.0f);
+        float randY = Random.Range(0.1f, 1.0f);
+        float randZ = Random.Range(0.1f, 1.0f);
+        float randK = Random.Range(0.1f, 1.0f);
 
-        transform.Rotate(Vector3.up, randX);
-        transform.Rotate(Vector3.down, randY);
+        //transform.Rotate(Vector3.up, randX);
+        //transform.Rotate(Vector3.down, randY);
         transform.Rotate(Vector3.left, randZ);
         transform.Rotate(Vector3.right, randK);
     }
 
     void PlatFall()
     {
-        transform.Translate(Vector3.down * platSpeed * Time.deltaTime);
+        transform.Translate(-Vector3.forward * platSpeed * Time.deltaTime);
         Destroy(this.gameObject, platLifeTime);
     }
 }

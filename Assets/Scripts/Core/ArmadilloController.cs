@@ -24,6 +24,13 @@ public class ArmadilloController : MonoBehaviour {
 
     public bool m_isGrounded;
 
+    public GameObject groundparticleobj;
+    private GameObject groundparticle;
+
+    public float maxSpeed = 200f;
+
+    Vector3 startPos;
+
     private Player player; // The Rewired Player
 
     private void Awake()
@@ -35,6 +42,7 @@ public class ArmadilloController : MonoBehaviour {
     private void Start()
     {
         m_rb = this.GetComponent<Rigidbody>();
+        startPos = transform.position;
     }
 
     private void Update()
@@ -46,12 +54,26 @@ public class ArmadilloController : MonoBehaviour {
         {
             m_rb.AddForce(m_jumpForce * new Vector3(0, 1, 0));
         }
+
+        if (player.GetButtonDown("Start Button"))
+        {
+            transform.position = startPos;
+            m_rb.velocity = new Vector3(0, 0, 0);
+          
+        }
+
+        GroundParticle();
+
+        m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxSpeed); // maxspeed controller
     }
 
     private void FixedUpdate()
     {
         CheckIfGrounded();
         Rolling();
+        
+        
+        
     }
 
     void Rolling()
@@ -70,8 +92,8 @@ public class ArmadilloController : MonoBehaviour {
         RaycastHit[] hits;
 
         Vector3 positionToCheck = transform.position;
-        hits = Physics.RaycastAll(positionToCheck, new Vector3(0, -1, 0), 1f);
-
+        hits = Physics.RaycastAll(positionToCheck, new Vector3(0, -1, 0), 2f);
+        
 
 
         if(hits.Length > 0)
@@ -81,6 +103,40 @@ public class ArmadilloController : MonoBehaviour {
         else
         {
             m_isGrounded = false;
+        }
+    }
+
+    private void GroundParticle()
+    {
+        if (m_isGrounded && groundparticle == null)
+        {
+            groundparticle = Instantiate(groundparticleobj, transform.position, transform.rotation);
+        }
+
+        if (m_isGrounded && groundparticle != null)
+        {
+            groundparticle.transform.position = transform.position;
+        }
+
+        if (!m_isGrounded && groundparticle != null)
+        {
+            Destroy(groundparticle);
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "boat")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "boat")
+        {
+            transform.parent = null;
         }
     }
 }

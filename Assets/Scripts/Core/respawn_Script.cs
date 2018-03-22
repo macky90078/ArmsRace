@@ -14,7 +14,7 @@ public class respawn_Script : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag=="Player"){
+		if (other.gameObject.tag == "Player"){
 			playerRigidBody=other.GetComponent<Rigidbody>();
 			
 			playerRigidBody.velocity=new Vector3(0,0,0);//stop the players movement

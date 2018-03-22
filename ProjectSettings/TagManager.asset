@@ -19,6 +19,8 @@ TagManager:
   - Portal
   - Wall
   - WallR
+  - Fire
+  - boat
   layers:
   - Default
   - TransparentFX

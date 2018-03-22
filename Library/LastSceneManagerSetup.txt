@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/R_BridgeMap.unity
+- path: Assets/_Scenes/R_Remix.unity
   isLoaded: 1
   isActive: 1
