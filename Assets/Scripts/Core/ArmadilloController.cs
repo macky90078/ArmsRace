@@ -9,7 +9,7 @@ public class ArmadilloController : MonoBehaviour {
 
     private Rigidbody m_rb;
 
-    [SerializeField] private Camera m_camera;
+    [SerializeField] public Camera m_camera;
 
     [SerializeField] private float speed = 5;
     [SerializeField] private float turnSpeed = 10;

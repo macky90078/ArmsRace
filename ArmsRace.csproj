@@ -270,10 +270,13 @@
     <Compile Include="Assets\Scripts\Core\PlatformMovement.cs" />
     <Compile Include="Assets\Scripts\Core\respawn_Script.cs" />
     <Compile Include="Assets\Scripts\Core\SpeedRingBoost.cs" />
+    <Compile Include="Assets\Scripts\levelToLoad.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\playerSelection.cs" />
     <Compile Include="Assets\Scripts\SlideBackFore.cs" />
     <Compile Include="Assets\Scripts\Spinner.cs" />
+    <Compile Include="Assets\Scripts\SprintRace\FinishLine.cs" />
     <Compile Include="Assets\SplineMesh\Scripts\Bezier\CubicBezierCurve.cs" />
     <Compile Include="Assets\SplineMesh\Scripts\Bezier\Spline.cs" />
     <Compile Include="Assets\SplineMesh\Scripts\Bezier\SplineNode.cs" />
