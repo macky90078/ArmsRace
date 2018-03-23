@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
-public class ArmadilloController : MonoBehaviour {
-
+public class ArmadilloController : MonoBehaviour
+{
     public int playerId = 0; // The Rewired player id of this character
 
     private Rigidbody m_rb;
@@ -39,6 +39,12 @@ public class ArmadilloController : MonoBehaviour {
         player = ReInput.players.GetPlayer(playerId);
     }
 
+    public void setRewiredPlayer()
+    {
+        // Get the Rewired object for this player and keep it for the duration of the character's lifetime
+        player = ReInput.players.GetPlayer(playerId);
+    }
+
     private void Start()
     {
         m_rb = this.GetComponent<Rigidbody>();
@@ -50,16 +56,20 @@ public class ArmadilloController : MonoBehaviour {
         m_fVerticalInput = player.GetAxis("Move LVertical");
         m_fHorizontalInput = player.GetAxis("Move LHorizontal");
 
-        if(player.GetButtonDown("A Button") && m_isGrounded)
+        if (player.GetButtonDown("A Button") && m_isGrounded)
         {
             m_rb.AddForce(m_jumpForce * new Vector3(0, 1, 0));
         }
-
+        //added by James
+        if (player.GetButtonDown("A Button"))
+        {
+            airJump();
+        }
+        //
         if (player.GetButtonDown("Start Button"))
         {
             transform.position = startPos;
             m_rb.velocity = new Vector3(0, 0, 0);
-          
         }
 
         GroundParticle();
@@ -71,9 +81,6 @@ public class ArmadilloController : MonoBehaviour {
     {
         CheckIfGrounded();
         Rolling();
-        
-        
-        
     }
 
     void Rolling()
@@ -86,6 +93,26 @@ public class ArmadilloController : MonoBehaviour {
         m_rb.AddForce(forceDirection.normalized * speed * (m_fVerticalInput));
         m_rb.AddForce(turnDirection.normalized * turnSpeed * (m_fHorizontalInput));
     }
+    private bool m_hasAirJumped;
+    [SerializeField] private float m_airJumpForce = 1000;
+    [SerializeField] private float m_airJumpHeight = 0;
+
+    private void airJump()
+    {
+        CheckIfGrounded();
+        if (!m_isGrounded && !m_hasAirJumped)
+        {
+            m_hasAirJumped = true;
+            //  m_rb.AddForce(m_airJumpForce * forceDirection.normalized); //This is airdash forward
+            m_rb.AddForce(m_airJumpForce * forceDirection.normalized * (m_fVerticalInput));
+            m_rb.AddForce(m_airJumpForce * turnDirection.normalized * (m_fHorizontalInput));//this is airdash is direction pushed by a force
+            m_rb.AddForce(m_airJumpHeight * new Vector3(0, 1, 0));
+
+            return;
+        }
+        else if (m_isGrounded)
+            m_hasAirJumped = false;
+    }
 
     private void CheckIfGrounded()
     {
@@ -93,10 +120,8 @@ public class ArmadilloController : MonoBehaviour {
 
         Vector3 positionToCheck = transform.position;
         hits = Physics.RaycastAll(positionToCheck, new Vector3(0, -1, 0), 2f);
-        
 
-
-        if(hits.Length > 0)
+        if (hits.Length > 0)
         {
             m_isGrounded = true;
         }
@@ -122,7 +147,6 @@ public class ArmadilloController : MonoBehaviour {
         {
             Destroy(groundparticle);
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -132,6 +156,7 @@ public class ArmadilloController : MonoBehaviour {
             transform.parent = collision.transform;
         }
     }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.transform.tag == "boat")
