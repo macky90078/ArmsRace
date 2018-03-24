@@ -45,30 +45,26 @@ public class FinishLine : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                _playerID = other.GetComponent<ArmadilloController>().playerId;
-                _playersFinished++; // Incrementing the number of players that have crossed the finish line
+                _playerID = other.GetComponent<ArmadilloController>().playerId;                              
             }
 
-            if (_playersFinished == 1)
+            if (_playersFinished == 0)
             {
                 _firstPlace = _playerID;
                 FirstPlaceAnnouncement();
-                //Invoke("FirstPlaceAnnouncement", 0.2f);
-                //Debug.Log("First place: Player " + (_firstPlace + 1) + "!");
+                _playersFinished++;
             }
-            else if (_playersFinished == 2)
+            else if (_playersFinished == 1 && (_playerID != _firstPlace))
             {
                 _secondPlace = _playerID;
                 SecondPlaceAnnouncement();
-                //Invoke("SecondPlaceAnnouncement", 0.5f);
-                //Debug.Log("Second place: Player " + (_secondPlace + 1) + "!");
+                _playersFinished++;
             }
-            else if (_playersFinished == 3)
+            else if (_playersFinished == 2 && (_playerID != _firstPlace) && (_playerID != _secondPlace))
             {
                 _thirdPlace = _playerID;
                 ThirdPlaceAnnouncement();
-                //Invoke("ThirdPlaceAnnouncement", 1);
-                //Debug.Log("Third place: Player " + (_thirdPlace + 1) + "!");
+                _playersFinished++;
             }
 
             if (_playersFinished == (_numPlayers - 1))
