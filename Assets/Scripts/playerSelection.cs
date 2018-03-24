@@ -43,6 +43,7 @@ public class playerSelection : MonoBehaviour
                 players[i].GetComponent<ArmadilloController>().m_camera = playerCameras[i];
                 playerCameras[i].GetComponent<CameraController>().playerId = i;
                 playerCameras[i].GetComponent<CameraController>().player = players[i].transform;
+                playerCameras[i].GetComponent<AudioListener>().enabled = false; // Disabled because it was impossible to check the debug log (5 audio listeners in scene)
             }
         }
     }

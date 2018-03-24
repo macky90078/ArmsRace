@@ -110,7 +110,7 @@ public class ArmadilloController : MonoBehaviour {
     {
         if (m_isGrounded && groundparticle == null)
         {
-            groundparticle = Instantiate(groundparticleobj, transform.position, transform.rotation);
+            //groundparticle = Instantiate(groundparticleobj, transform.position, transform.rotation);
         }
 
         if (m_isGrounded && groundparticle != null)

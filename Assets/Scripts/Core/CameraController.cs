@@ -38,6 +38,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         cameraTransform = transform;
+        //player = GetComponent<Transform>();
     }
 
     private void Update()
