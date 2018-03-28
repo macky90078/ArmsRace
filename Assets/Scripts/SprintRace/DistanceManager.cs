@@ -38,10 +38,14 @@ public class DistanceManager : MonoBehaviour
     Coroutine thirdRoutine = null;
     Coroutine fourthRoutine = null;
 
+    private uint _numPlayers = 0;
+
     void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         finishLine = GameObject.FindGameObjectWithTag("FinishLine");
+        _numPlayers = finishLine.gameObject.GetComponent<FinishLine>().GetNumPlayers();
+        EnableText();
     }
 
     public void FindFirstPlayer()
@@ -187,30 +191,9 @@ public class DistanceManager : MonoBehaviour
         //else p4_pos.text = "Place: --";
     }
 
-    public void EndRace()
+    public void StartFourRoutines()
     {
-        this.enabled = false;
-    }
-
-    public void CheckResults()
-    {
-        int firstPlace = finishLine.gameObject.GetComponent<FinishLine>().GetFirstPlace();
-        int secondPlace = finishLine.gameObject.GetComponent<FinishLine>().GetSecondPlace();
-        int thirdPlace = finishLine.gameObject.GetComponent<FinishLine>().GetThirdPlace();
-
-        if (firstPlace == 0 || firstPlace == 1 || firstPlace == 2 || firstPlace == 3)
-           isCr1 = false;
-        if (secondPlace == 0 || secondPlace == 1 || secondPlace == 2 || secondPlace == 3)
-           isCr2 = false;
-        if (thirdPlace == 0 || thirdPlace == 1 || thirdPlace == 2 || thirdPlace == 3) 
-          {isCr3 = false; isCr4 = false;}
-    }
-
-    void Update()
-    {
-        CheckResults();
-
-        if(isCr1 == true)
+        if (isCr1 == true)
             firstRoutine = StartCoroutine("FindFirstPlayer");
         else if (isCr1 == false)
             StopCoroutine("FindFirstPlayer");
@@ -229,7 +212,89 @@ public class DistanceManager : MonoBehaviour
             fourthRoutine = StartCoroutine("FindFourthPlayer");
         else if (isCr4 == false)
             StopCoroutine("FindFourthPlayer");
+    }
 
-        Debug.Log("1st: "+closest+"2nd: "+closest2+"3rd: "+closest3+"4th: "+closest4);
+    public void StartThreeRoutines()
+    {
+        if (isCr1 == true)
+            firstRoutine = StartCoroutine("FindFirstPlayer");
+        else if (isCr1 == false)
+            StopCoroutine("FindFirstPlayer");
+
+        if (isCr2 == true)
+            secondRoutine = StartCoroutine("FindSecondPlayer");
+        else if (isCr2 == false)
+            StopCoroutine("FindSecondPlayer");
+
+        if (isCr3 == true)
+            thirdRoutine = StartCoroutine("FindThirdPlayer");
+        else if (isCr3 == false)
+            StopCoroutine("FindThirdPlayer");
+    }
+
+    public void StartTwoRoutines()
+    {
+        if (isCr1 == true)
+            firstRoutine = StartCoroutine("FindFirstPlayer");
+        else if (isCr1 == false)
+            StopCoroutine("FindFirstPlayer");
+
+        if (isCr2 == true)
+            secondRoutine = StartCoroutine("FindSecondPlayer");
+        else if (isCr2 == false)
+            StopCoroutine("FindSecondPlayer");
+    }
+
+    void EnableText()
+    {
+        if (_numPlayers == 4)
+        {
+            p1_pos.enabled = true;
+            p2_pos.enabled = true;
+            p3_pos.enabled = true;
+            p4_pos.enabled = true;
+        }
+        else if (_numPlayers == 3)
+        {
+            p1_pos.enabled = true;
+            p2_pos.enabled = true;
+            p3_pos.enabled = true;
+        }
+        else if (_numPlayers == 2)
+        {
+            p1_pos.enabled = true;
+            p2_pos.enabled = true;
+        }
+    }
+
+    public void EndRace()
+    {
+        this.enabled = false;
+    }
+
+    public void CheckResults()
+    {
+        int firstPlace = finishLine.gameObject.GetComponent<FinishLine>().GetFirstPlace();
+        int secondPlace = finishLine.gameObject.GetComponent<FinishLine>().GetSecondPlace();
+        int thirdPlace = finishLine.gameObject.GetComponent<FinishLine>().GetThirdPlace();
+
+        if (firstPlace == 0 || firstPlace == 1 || firstPlace == 2 || firstPlace == 3)
+            isCr1 = false;
+        if (secondPlace == 0 || secondPlace == 1 || secondPlace == 2 || secondPlace == 3)
+            isCr2 = false;
+        if (thirdPlace == 0 || thirdPlace == 1 || thirdPlace == 2 || thirdPlace == 3)
+        { isCr3 = false; isCr4 = false; }
+    }
+
+    void Update()
+    {
+        CheckResults();
+
+        if (_numPlayers == 4)
+            StartFourRoutines();
+        else if (_numPlayers == 3)
+            StartThreeRoutines();
+        else
+            StartTwoRoutines();
     }
 }

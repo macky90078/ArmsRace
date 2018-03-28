@@ -32,14 +32,14 @@ public class FinishLine : MonoBehaviour
     private int _playerID;
     private int _playersFinished = 0; // Counter for number of players that cross the finish line
     private GameObject[] _currentPlayers; // Container to hold the current number of players in the scene
-    private int _numPlayers = 0; // Counter for the number of players in the scene
+    private uint _numPlayers = 0; // Counter for the number of players in the scene
 
     void Start ()
     {
         _currentPlayers = GameObject.FindGameObjectsWithTag("Player"); // Adding players to the container
         GetPlayersOnMap(); // Checking how many players are in the scene
-        Ranking = GameObject.FindGameObjectWithTag("RankManager");
-        //Debug.Log("Number of players in current session: " + _numPlayers);
+        Debug.Log("numplayers: " + _numPlayers);
+        EnableText();
     }
 
     void Update()
@@ -124,13 +124,18 @@ public class FinishLine : MonoBehaviour
         }
     }
 
-    public int GetPlayersOnMap()
+    public uint GetPlayersOnMap()
     {
         foreach (GameObject players in _currentPlayers)
         {
             _numPlayers++;
         }
 
+        return _numPlayers;
+    }
+
+    public uint GetNumPlayers()
+    {
         return _numPlayers;
     }
 
