@@ -23,20 +23,28 @@ public class FinishLine : MonoBehaviour
     public Text text_p3;
     public Text text_p4;
 
-    private int _firstPlace; // Player that arrives first
-    private int _secondPlace; // Player that arrives second
-    private int _thirdPlace; // Player that arrives third
+    private int _firstPlace = -1;// Player that arrives first
+    private int _secondPlace = -1; // Player that arrives second
+    private int _thirdPlace = -1; // Player that arrives third
+
+    GameObject Ranking;
 
     private int _playerID;
     private int _playersFinished = 0; // Counter for number of players that cross the finish line
     private GameObject[] _currentPlayers; // Container to hold the current number of players in the scene
-    private int _numPlayers = 0; // Counter for the number of players in the scene
+    private uint _numPlayers = 0; // Counter for the number of players in the scene
 
     void Start ()
     {
         _currentPlayers = GameObject.FindGameObjectsWithTag("Player"); // Adding players to the container
         GetPlayersOnMap(); // Checking how many players are in the scene
-        //Debug.Log("Number of players in current session: " + _numPlayers);
+        Debug.Log("numplayers: " + _numPlayers);
+        EnableText();
+    }
+
+    void Update()
+    {
+        Debug.Log(_firstPlace + ", "+ _secondPlace + ", " + _thirdPlace);
     }
 	
     void OnTriggerEnter(Collider other)
@@ -46,33 +54,29 @@ public class FinishLine : MonoBehaviour
             if (other.tag == "Player")
             {
                 _playerID = other.GetComponent<ArmadilloController>().playerId;
-                _playersFinished++; // Incrementing the number of players that have crossed the finish line
-            }
 
-            if (_playersFinished == 1)
-            {
-                _firstPlace = _playerID;
-                FirstPlaceAnnouncement();
-                //Invoke("FirstPlaceAnnouncement", 0.2f);
-                //Debug.Log("First place: Player " + (_firstPlace + 1) + "!");
-            }
-            else if (_playersFinished == 2)
-            {
-                _secondPlace = _playerID;
-                SecondPlaceAnnouncement();
-                //Invoke("SecondPlaceAnnouncement", 0.5f);
-                //Debug.Log("Second place: Player " + (_secondPlace + 1) + "!");
-            }
-            else if (_playersFinished == 3)
-            {
-                _thirdPlace = _playerID;
-                ThirdPlaceAnnouncement();
-                //Invoke("ThirdPlaceAnnouncement", 1);
-                //Debug.Log("Third place: Player " + (_thirdPlace + 1) + "!");
+                if (_playersFinished == 0)
+                {
+                    _firstPlace = _playerID;
+                    FirstPlaceAnnouncement();
+                    _playersFinished++;
+                }
+                else if (_playersFinished == 1 && (_playerID != _firstPlace))
+                {
+                    _secondPlace = _playerID;
+                    SecondPlaceAnnouncement();
+                    _playersFinished++;
+                }
+                else if (_playersFinished == 2 && (_playerID != _firstPlace) && (_playerID != _secondPlace))
+                {
+                    _thirdPlace = _playerID;
+                    ThirdPlaceAnnouncement();
+                    _playersFinished++;
+                }
             }
 
             if (_playersFinished == (_numPlayers - 1))
-                ShowResults();
+                Invoke("ShowResults", 3.0f);
         }
     }
 
@@ -120,12 +124,19 @@ public class FinishLine : MonoBehaviour
         }
     }
 
-    void GetPlayersOnMap()
+    public uint GetPlayersOnMap()
     {
         foreach (GameObject players in _currentPlayers)
         {
             _numPlayers++;
         }
+
+        return _numPlayers;
+    }
+
+    public uint GetNumPlayers()
+    {
+        return _numPlayers;
     }
 
     void FirstPlaceAnnouncement()
@@ -197,7 +208,6 @@ public class FinishLine : MonoBehaviour
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!";
         }
-
         Invoke("EndRace", 3);
     }
 
@@ -207,7 +217,21 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p3.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p4.text = "P" + (_firstPlace + 1) + " Wins!";
-        //EnableText();
         this.enabled = false;
+    }
+
+    public int GetFirstPlace()
+    {
+        return _firstPlace;
+    }
+
+    public int GetSecondPlace()
+    {
+        return _secondPlace;
+    }
+
+    public int GetThirdPlace()
+    {
+        return _thirdPlace;
     }
 }

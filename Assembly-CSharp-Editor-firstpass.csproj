@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2EC01C8A-2847-2F84-40FE-844017660F38}</ProjectGuid>
+    <ProjectGuid>{730B574D-F8FC-D806-D7BB-7FE9B21412B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -190,36 +190,36 @@
  <HintPath>D:/Unity2017/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity5">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity5">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="KdTreeLib">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
  </Reference>
  <Reference Include="pb_Stl">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
  </Reference>
  <Reference Include="Poly2Tri">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderEditor-Unity5">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity5.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Editor">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/Rewired/Internal/Libraries/Editor/Rewired_Editor.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/Rewired/Internal/Libraries/Editor/Rewired_Editor.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Core">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Windows_Lib">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows_Lib.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows_Lib.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{412F95C7-9839-95A6-13E6-28C65B0F40D6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{0FBC4963-9AAA-5E9F-1474-D92BC381D9E5}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
