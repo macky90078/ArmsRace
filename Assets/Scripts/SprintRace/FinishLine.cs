@@ -27,6 +27,8 @@ public class FinishLine : MonoBehaviour
     private int _secondPlace; // Player that arrives second
     private int _thirdPlace; // Player that arrives third
 
+    GameObject Ranking;
+
     private int _playerID;
     private int _playersFinished = 0; // Counter for number of players that cross the finish line
     private GameObject[] _currentPlayers; // Container to hold the current number of players in the scene
@@ -36,7 +38,13 @@ public class FinishLine : MonoBehaviour
     {
         _currentPlayers = GameObject.FindGameObjectsWithTag("Player"); // Adding players to the container
         GetPlayersOnMap(); // Checking how many players are in the scene
+        Ranking = GameObject.FindGameObjectWithTag("RankManager");
         //Debug.Log("Number of players in current session: " + _numPlayers);
+    }
+
+    void Update()
+    {
+        Debug.Log(_firstPlace + ", "+ _secondPlace + ", " + _thirdPlace);
     }
 	
     void OnTriggerEnter(Collider other)
@@ -45,7 +53,7 @@ public class FinishLine : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                _playerID = other.GetComponent<ArmadilloController>().playerId;                              
+                _playerID = other.GetComponent<ArmadilloController>().playerId;
             }
 
             if (_playersFinished == 0)
@@ -116,12 +124,14 @@ public class FinishLine : MonoBehaviour
         }
     }
 
-    void GetPlayersOnMap()
+    public int GetPlayersOnMap()
     {
         foreach (GameObject players in _currentPlayers)
         {
             _numPlayers++;
         }
+
+        return _numPlayers;
     }
 
     void FirstPlaceAnnouncement()
@@ -130,6 +140,7 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_firstPlace + 1) + " Finished 1st!";
         text_p3.text = "P" + (_firstPlace + 1) + " Finished 1st!";
         text_p4.text = "P" + (_firstPlace + 1) + " Finished 1st!";
+        //Ranking.GetComponent<DistanceManager>().StopCoroutine("FindFirstPlayer");
     }
 
     void SecondPlaceAnnouncement()
@@ -138,6 +149,7 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_secondPlace + 1) + " Finished 2nd!";
         text_p3.text = "P" + (_secondPlace + 1) + " Finished 2nd!";
         text_p4.text = "P" + (_secondPlace + 1) + " Finished 2nd!";
+        //Ranking.GetComponent<DistanceManager>().StopCoroutine("FindSecondPlayer");
     }
 
     void ThirdPlaceAnnouncement()
@@ -146,6 +158,7 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_thirdPlace + 1) + " Finished 3rd!";
         text_p3.text = "P" + (_thirdPlace + 1) + " Finished 3rd!";
         text_p4.text = "P" + (_thirdPlace + 1) + " Finished 3rd!";
+        //Ranking.GetComponent<DistanceManager>().StopCoroutine("FindThirdPlayer");
     }
 
     void ShowResults()
@@ -194,6 +207,8 @@ public class FinishLine : MonoBehaviour
                "Second place: P" + (_secondPlace + 1) + "!";
         }
 
+        //Ranking.GetComponent<DistanceManager>().StopAllCoroutines();
+
         Invoke("EndRace", 3);
     }
 
@@ -203,7 +218,21 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p3.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p4.text = "P" + (_firstPlace + 1) + " Wins!";
-        //EnableText();
         this.enabled = false;
+    }
+
+    public int GetFirstPlace()
+    {
+        return _firstPlace;
+    }
+
+    public int GetSecondPlace()
+    {
+        return _secondPlace;
+    }
+
+    public int GetThirdPlace()
+    {
+        return _thirdPlace;
     }
 }

@@ -21,6 +21,8 @@ TagManager:
   - WallR
   - Fire
   - boat
+  - FinishLine
+  - RankManager
   layers:
   - Default
   - TransparentFX

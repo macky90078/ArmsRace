@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E2AE1EEF-22F9-4120-1F8B-9F014A9E9C61}</ProjectGuid>
+    <ProjectGuid>{1C1ABF69-AD87-6254-A519-F963B280DEB6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -216,8 +216,10 @@
      <Compile Include="Assets\Scripts\playerSelection.cs" />
      <Compile Include="Assets\Scripts\SlideBackFore.cs" />
      <Compile Include="Assets\Scripts\Spinner.cs" />
+     <Compile Include="Assets\Scripts\SprintRace\DistanceManager.cs" />
      <Compile Include="Assets\Scripts\SprintRace\DistanceToFinish.cs" />
      <Compile Include="Assets\Scripts\SprintRace\FinishLine.cs" />
+     <Compile Include="Assets\Scripts\SprintRace\pAnimControllerScript.cs" />
      <Compile Include="Assets\SplineMesh\Scripts\Bezier\CubicBezierCurve.cs" />
      <Compile Include="Assets\SplineMesh\Scripts\Bezier\Spline.cs" />
      <Compile Include="Assets\SplineMesh\Scripts\Bezier\SplineNode.cs" />
@@ -326,30 +328,30 @@
  <HintPath>D:/Unity2017/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity5">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity5">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="KdTreeLib">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
  </Reference>
  <Reference Include="pb_Stl">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
  </Reference>
  <Reference Include="Poly2Tri">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Core">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
  </Reference>
  <Reference Include="Rewired_Windows_Lib">
- <HintPath>D:/GitHub/repos/MadSilver/ArmsRacers/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows_Lib.dll</HintPath>
+ <HintPath>D:/GitHub/repos/MadSilver/ArmsRace/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows_Lib.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{412F95C7-9839-95A6-13E6-28C65B0F40D6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{0FBC4963-9AAA-5E9F-1474-D92BC381D9E5}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
