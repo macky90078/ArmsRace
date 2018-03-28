@@ -27,11 +27,23 @@ public class ArmadilloController : MonoBehaviour
     public GameObject groundparticleobj;
     private GameObject groundparticle;
 
+    
+    public AudioSource boost;
+    
+
     public float maxSpeed = 200f;
 
     Vector3 startPos;
 
     private Player player; // The Rewired Player
+
+    public GameObject particles1;
+   // public GameObject particles2;
+    private GameObject burstparticle;
+
+    public bool m_hasAirJumped;
+    [SerializeField] private float m_airJumpForce = 1000;
+    [SerializeField] private float m_airJumpHeight = 0;
 
     private void Awake()
     {
@@ -59,13 +71,18 @@ public class ArmadilloController : MonoBehaviour
         if (player.GetButtonDown("A Button") && m_isGrounded)
         {
             m_rb.AddForce(m_jumpForce * new Vector3(0, 1, 0));
+           
         }
+
+      
         //added by James
-        if (player.GetButtonDown("A Button"))
+        if (player.GetButtonDown("X Button"))
         {
             airJump();
+            
+            
         }
-        //
+        
         if (player.GetButtonDown("Start Button"))
         {
             transform.position = startPos;
@@ -93,9 +110,7 @@ public class ArmadilloController : MonoBehaviour
         m_rb.AddForce(forceDirection.normalized * speed * (m_fVerticalInput));
         m_rb.AddForce(turnDirection.normalized * turnSpeed * (m_fHorizontalInput));
     }
-    private bool m_hasAirJumped;
-    [SerializeField] private float m_airJumpForce = 1000;
-    [SerializeField] private float m_airJumpHeight = 0;
+ 
 
     private void airJump()
     {
@@ -107,11 +122,14 @@ public class ArmadilloController : MonoBehaviour
             m_rb.AddForce(m_airJumpForce * forceDirection.normalized * (m_fVerticalInput));
             m_rb.AddForce(m_airJumpForce * turnDirection.normalized * (m_fHorizontalInput));//this is airdash is direction pushed by a force
             m_rb.AddForce(m_airJumpHeight * new Vector3(0, 1, 0));
+            burstparticle = Instantiate(particles1, transform.position, transform.rotation);
+
+            boost.Play();
+
 
             return;
         }
-        else if (m_isGrounded)
-            m_hasAirJumped = false;
+        
     }
 
     private void CheckIfGrounded()
@@ -124,6 +142,8 @@ public class ArmadilloController : MonoBehaviour
         if (hits.Length > 0)
         {
             m_isGrounded = true;
+            m_hasAirJumped = false;
+            Destroy(burstparticle);
         }
         else
         {
@@ -148,6 +168,24 @@ public class ArmadilloController : MonoBehaviour
             Destroy(groundparticle);
         }
     }
+
+    //private void BurstParticle()
+    //{
+    //    if (m_hasAirJumped && burstparticle == null)
+    //    {
+    //        burstparticle = Instantiate(particles1, transform.position, transform.rotation);
+    //    }
+
+    //    if (m_hasAirJumped && burstparticle != null)
+    //    {
+    //        burstparticle.transform.position = transform.position;
+    //    }
+
+        //if (!m_hasAirJumped && burstparticle != null)
+        //{
+        //    Destroy(burstparticle);
+        //}
+    
 
     private void OnCollisionEnter(Collision collision)
     {

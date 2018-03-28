@@ -8,10 +8,16 @@ public class respawn_Script : MonoBehaviour {
 	private Rigidbody playerRigidBody;
 	public Vector3 directionVector;
 	public float force;
-	
-	void Start(){
+    public AudioSource spring;
+    
+
+    void Start(){
 		respawnPoint = this.gameObject.transform.GetChild(0);//Rotation of player will match the child object
-	}
+
+        if (GetComponent<AudioSource>() != null)
+            spring = GetComponent<AudioSource>();
+
+    }
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Player"){
@@ -24,6 +30,9 @@ public class respawn_Script : MonoBehaviour {
 			other.gameObject.transform.rotation = respawnPoint.rotation;
 			
 			playerRigidBody.AddForce(directionVector*force);//respawn force from cannon
-		}
+
+            spring.Play();
+            
+        }
 	}
 }

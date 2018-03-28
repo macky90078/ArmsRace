@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018692044446598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.78, y: 1.73, z: -1745.1721}
+  m_LocalPosition: {x: 22.850002, y: -30.960001, z: -2389.372}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4296421757716626}
@@ -177,6 +177,8 @@ MonoBehaviour:
   m_isGrounded: 0
   groundparticleobj: {fileID: 100000, guid: 98c58c8dd46640c49bb5f557afafea7c, type: 2}
   maxSpeed: 200
+  m_airJumpForce: 9000
+  m_airJumpHeight: 0
 --- !u!135 &135732826657374658
 SphereCollider:
   m_ObjectHideFlags: 1

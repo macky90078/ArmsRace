@@ -154,8 +154,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.03137255, g: 0.03137255, b: 0.03137255, a: 1}
-      maxColor: {r: 0.007843138, g: 0.007843138, b: 0.007843138, a: 1}
+      minColor: {r: 1, g: 0.16176468, b: 0.16176468, a: 1}
+      maxColor: {r: 0.3602941, g: 0.3602941, b: 0.3602941, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -443,7 +443,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.02
+      scalar: 1
       minScalar: -0.02
       maxCurve:
         serializedVersion: 2
@@ -811,8 +811,8 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 2
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -852,8 +852,8 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 2
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2090,7 +2090,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    range: {x: 0, y: 1}
+    range: {x: 0, y: 1000}
     separateAxes: 0
   RotationBySpeedModule:
     enabled: 0
@@ -3262,7 +3262,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 1
   m_MinParticleSize: 0
-  m_MaxParticleSize: 8.79
+  m_MaxParticleSize: 8
   m_CameraVelocityScale: 0
   m_VelocityScale: 1
   m_LengthScale: 1
