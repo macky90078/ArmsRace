@@ -97,7 +97,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 7
-      minScalar: 3
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -155,7 +155,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 2
       minColor: {r: 1, g: 0.16176468, b: 0.16176468, a: 1}
-      maxColor: {r: 0.3602941, g: 0.3602941, b: 0.3602941, a: 1}
+      maxColor: {r: 0.36764705, g: 0.36494377, b: 0.36494377, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -218,7 +218,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 3
-      minScalar: 3
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3262,7 +3262,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 1
   m_MinParticleSize: 0
-  m_MaxParticleSize: 8
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 1
   m_LengthScale: 1
