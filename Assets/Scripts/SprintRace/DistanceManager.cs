@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,12 +28,15 @@ public class DistanceManager : MonoBehaviour
     GameObject closest3 = null;
     GameObject closest4 = null;
 
-    public bool raceIsOver = false;
+    bool isCr1 = true;
+    bool isCr2 = true;
+    bool isCr3 = true;
+    bool isCr4 = true;
 
-    public bool firstCr = true;
-    public bool secondCr = true;
-    public bool thirdCr = true;
-    public bool fourthCr = true;
+    Coroutine firstRoutine = null;
+    Coroutine secondRoutine = null;
+    Coroutine thirdRoutine = null;
+    Coroutine fourthRoutine = null;
 
     void Start()
     {
@@ -78,7 +82,12 @@ public class DistanceManager : MonoBehaviour
         float distance2 = Mathf.Infinity;
         foreach (GameObject _player2 in players)
         {
-            float curDistance2 = Vector3.Distance(_player2.transform.position, closest.transform.position);
+            float curDistance2;
+            if (isCr1 == false)
+                curDistance2 = Vector3.Distance(_player2.transform.position, finishLine.transform.position); 
+            else
+                curDistance2 = Vector3.Distance(_player2.transform.position, closest.transform.position);
+            
             if ((curDistance2) < distance2 && (_player2!=closest))
             {
                 closest2 = _player2;
@@ -110,7 +119,12 @@ public class DistanceManager : MonoBehaviour
         float distance3 = Mathf.Infinity;
         foreach (GameObject _player3 in players)
         {
-            float curDistance3 = Vector3.Distance(_player3.transform.position, closest2.transform.position);
+            float curDistance3;
+            if (isCr2 == false)
+                curDistance3 = Vector3.Distance(_player3.transform.position, finishLine.transform.position);
+            else
+                curDistance3 = Vector3.Distance(_player3.transform.position, closest2.transform.position);
+
             if ((curDistance3) < distance3 && (_player3 != closest2) && ((_player3 != closest)))
             {
                 closest3 = _player3;
@@ -142,7 +156,12 @@ public class DistanceManager : MonoBehaviour
         float distance4 = Mathf.Infinity;
         foreach (GameObject _player4 in players)
         {
-            float curDistance4 = Vector3.Distance(_player4.transform.position, closest3.transform.position);
+            float curDistance4;
+            if (isCr3 == false)
+                curDistance4 = Vector3.Distance(_player4.transform.position, finishLine.transform.position);
+            else
+                curDistance4 = Vector3.Distance(_player4.transform.position, closest3.transform.position);
+
             if ((curDistance4) < distance4 && (_player4 != closest3) && (_player4 != closest2) && ((_player4 != closest)))
             {
                 closest4 = _player4;
@@ -173,25 +192,44 @@ public class DistanceManager : MonoBehaviour
         this.enabled = false;
     }
 
+    public void CheckResults()
+    {
+        int firstPlace = finishLine.gameObject.GetComponent<FinishLine>().GetFirstPlace();
+        int secondPlace = finishLine.gameObject.GetComponent<FinishLine>().GetSecondPlace();
+        int thirdPlace = finishLine.gameObject.GetComponent<FinishLine>().GetThirdPlace();
+
+        if (firstPlace == 0 || firstPlace == 1 || firstPlace == 2 || firstPlace == 3)
+           isCr1 = false;
+        if (secondPlace == 0 || secondPlace == 1 || secondPlace == 2 || secondPlace == 3)
+           isCr2 = false;
+        if (thirdPlace == 0 || thirdPlace == 1 || thirdPlace == 2 || thirdPlace == 3) 
+          {isCr3 = false; isCr4 = false;}
+    }
+
     void Update()
     {
-        /*if (firstCr)
-            StartCoroutine("FindFirstPlayer");
-        else if (firstCr == false) StopCoroutine("FindFirstPlayer");
-        if (secondCr)
-            StartCoroutine("FindSecondPlayer");
-        else if (secondCr == false) StopCoroutine("FindSecondPlayer");
-        if (thirdCr)
-            StartCoroutine("FindThirdPlayer");
-        else if (thirdCr == false)
-        {
-            StopCoroutine("FindThirdPlayer");
-            StartCoroutine("FindFourthPlayer");
-        }*/
+        CheckResults();
 
-        StartCoroutine("FindFirstPlayer");
-        StartCoroutine("FindSecondPlayer");
-        StartCoroutine("FindThirdPlayer");
-        StartCoroutine("FindFourthPlayer");
+        if(isCr1 == true)
+            firstRoutine = StartCoroutine("FindFirstPlayer");
+        else if (isCr1 == false)
+            StopCoroutine("FindFirstPlayer");
+
+        if (isCr2 == true)
+            secondRoutine = StartCoroutine("FindSecondPlayer");
+        else if (isCr2 == false)
+            StopCoroutine("FindSecondPlayer");
+
+        if (isCr3 == true)
+            thirdRoutine = StartCoroutine("FindThirdPlayer");
+        else if (isCr3 == false)
+            StopCoroutine("FindThirdPlayer");
+
+        if (isCr4 == true)
+            fourthRoutine = StartCoroutine("FindFourthPlayer");
+        else if (isCr4 == false)
+            StopCoroutine("FindFourthPlayer");
+
+        Debug.Log("1st: "+closest+"2nd: "+closest2+"3rd: "+closest3+"4th: "+closest4);
     }
 }
