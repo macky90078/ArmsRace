@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class levelToLoad : MonoBehaviour
 {
-    private string load_This_Level = "Mack";
+    private string load_This_Level = "R_Remix";
 
     void Awake()
     {

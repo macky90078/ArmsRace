@@ -9,21 +9,21 @@ public class CameraController : MonoBehaviour
     public int playerId = 0; // The Rewired player id of this character
 
     public float currentX = 0.0f;
-	public float currentY = -20f;
-	public float sensitivityX = 4.0f;
-	public float sensitivityY = 1.0f;
+    public float currentY = -20f;
+    public float sensitivityX = 4.0f;
+    public float sensitivityY = 1.0f;
 
-    public float cameraAngleMinY = -90;
-    public float cameraAngleMaxY = 90;
+    public float cameraAngleMinY = -40;
+    public float cameraAngleMaxY = 40;
 
     public Transform player;
     public Transform cameraTransform;
 
-	public float cameraAngleMinX = -35.0f;
-	public float cameraAngleMaxX = 50.0f;
-    public float cameraDistance = 10.0f;
-	public Vector3 cameraOffset = new Vector3 (0,1,5);
-	public float smoothSpeed = 0.125f;
+    public float cameraAngleMinX = 15f;
+    public float cameraAngleMaxX = 15f;
+    public float cameraDistance = 15f;
+    public Vector3 cameraOffset = new Vector3(0f, 50f, 10f);
+    public float smoothSpeed = 0.125f;
 
     [SerializeField] private float m_cameraRotationSpeed = 2f;
 
