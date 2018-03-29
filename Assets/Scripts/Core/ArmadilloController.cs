@@ -27,7 +27,9 @@ public class ArmadilloController : MonoBehaviour
     public GameObject groundparticleobj;
     private GameObject groundparticle;
 
-    
+    CameraController playerCamera;
+
+
     public AudioSource boost;
     
 
@@ -87,6 +89,10 @@ public class ArmadilloController : MonoBehaviour
         {
             transform.position = startPos;
             m_rb.velocity = new Vector3(0, 0, 0);
+
+            playerCamera = m_camera.GetComponent<CameraController>();
+            playerCamera.cameraAngleMinY = -40f;
+            playerCamera.cameraAngleMaxY = 40f;
         }
 
         //GroundParticle();

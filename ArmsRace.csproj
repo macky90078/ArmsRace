@@ -293,6 +293,7 @@
     <Compile Include="Assets\UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Art STuff\PersonalUseEULA.txt" />
     <None Include="Assets\BansheeGz\BGCollider\readme.txt" />
     <None Include="Assets\BansheeGz\BGCurve\readme.txt" />
     <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />

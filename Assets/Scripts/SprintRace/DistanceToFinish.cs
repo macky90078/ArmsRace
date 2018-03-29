@@ -23,6 +23,6 @@ public class DistanceToFinish : MonoBehaviour
     {
         _currentDistance = Vector3.Distance(FinishLine.transform.position, transform.transform.position);
         _distancePercentage = (_currentDistance / _startingDistance) * 100f;
-        playerDistance.text =  _currentDistance.ToString("f0") + "m" + " to goal";
+        playerDistance.text =  _currentDistance.ToString("f0") + "m";
     }
 }

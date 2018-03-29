@@ -30,6 +30,8 @@ public class FinishLine : MonoBehaviour
 
     GameObject Ranking;
 
+    CameraController playerCam;
+
     private int _playerID;
     private int _playersFinished = 0; // Counter for number of players that cross the finish line
     private GameObject[] _currentPlayers; // Container to hold the current number of players in the scene
@@ -77,10 +79,16 @@ public class FinishLine : MonoBehaviour
                     _playersFinished++;
                     EnableText();
                 }
+
+                playerCam = other.GetComponent<ArmadilloController>().m_camera.GetComponent<CameraController>();
+                playerCam.cameraAngleMinY = -360f;
+                playerCam.cameraAngleMaxY = 360f;
             }
 
             if (_playersFinished == (_numPlayers - 1))
-                Invoke("ShowResults", 3.0f);
+                Invoke("RaceOver", 3.0f);
+
+            
         }
     }
 
@@ -173,13 +181,80 @@ public class FinishLine : MonoBehaviour
         Invoke("DisableText", 3f);
     }
 
-    void ShowResults()
+    //void ShowResults()
+    //{
+    //    DisableText(); 
+    //    if (_numPlayers == 4)
+    //    {
+    //        text_p1.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" + 
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p2.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p3.text =
+    //            "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //            "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //            "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p4.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p5.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+                      
+                  
+           
+    //    }
+    //    else if (_numPlayers == 3)
+    //    {
+    //        DisableText();
+    //        text_p1.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p2.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p3.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //        text_p5.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+    //           "Third place: P" + (_thirdPlace + 1) + "!";
+    //    }
+    //    else if (_numPlayers == 2)
+    //    {
+    //        DisableText();
+    //        text_p1.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!";
+    //        text_p2.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!";
+    //        text_p5.text =
+    //           "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+    //           "Second place: P" + (_secondPlace + 1) + "!" + "\n" 
+    //           ;
+    //    }
+    //    Invoke("EndRace", 5);
+    //}
+
+
+    void RaceOver()
     {
-        DisableText(); 
+        DisableText();
         if (_numPlayers == 4)
         {
             text_p1.text =
-               "First place: P" + (_firstPlace + 1) + "!" + "\n" + 
+               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
                "Third place: P" + (_thirdPlace + 1) + "!";
             text_p2.text =
@@ -195,12 +270,10 @@ public class FinishLine : MonoBehaviour
                "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
                "Third place: P" + (_thirdPlace + 1) + "!";
             text_p5.text =
-               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
-               "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
-               "Third place: P" + (_thirdPlace + 1) + "!";
-                      
-                  
-           
+               "FINISH!";
+
+
+
         }
         else if (_numPlayers == 3)
         {
@@ -218,9 +291,7 @@ public class FinishLine : MonoBehaviour
                "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
                "Third place: P" + (_thirdPlace + 1) + "!";
             text_p5.text =
-               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
-               "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
-               "Third place: P" + (_thirdPlace + 1) + "!";
+               "FINISH!";
         }
         else if (_numPlayers == 2)
         {
@@ -232,9 +303,8 @@ public class FinishLine : MonoBehaviour
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!";
             text_p5.text =
-               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
-               "Second place: P" + (_secondPlace + 1) + "!" + "\n" 
-               ;
+               "FINISH!";
+            ;
         }
         Invoke("EndRace", 5);
     }
@@ -247,6 +317,7 @@ public class FinishLine : MonoBehaviour
         text_p4.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p5.text = "P" + (_firstPlace + 1) + " Wins!";
         this.enabled = false;
+        Invoke("DisableText", 5);
     }
 
    
