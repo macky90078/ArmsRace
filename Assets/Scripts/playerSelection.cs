@@ -9,12 +9,14 @@ public class playerSelection : MonoBehaviour
 {
     public int numPlayers;
     public GameObject[] playerPrefab;
+	public GameObject[] hatPrefabs;
     public Camera cameraPrefab;
     public GameObject[] playerStarts;
     public GameObject[] players;
+	public GameObject[] heads;
     public Camera[] playerCameras;
     public RewiredStandaloneInputModule RewiredObject;
-    private int temp_counter = 0;
+    public int temp_counter = 0;
     public levelToLoad loadLevelScript;
     public Text playertoSelect;
 
@@ -28,13 +30,19 @@ public class playerSelection : MonoBehaviour
     {
         numPlayers = chosenNumPlayers;
     }
-
+	private bool flip=true;
+	public void hatSelection(GameObject hatPrefab){
+		hatPrefabs[temp_counter]=hatPrefab;
+		flip =!flip;
+	}
     public void ArmadilloSelection(GameObject armadilloPrefab)
     {
+		if (flip){
         players = new GameObject[numPlayers];
         // int[] tester = RewiredObject.RewiredPlayerIds;
 
         playerPrefab[temp_counter] = armadilloPrefab;
+
         temp_counter++;
 
         if (temp_counter == numPlayers)
@@ -44,6 +52,7 @@ public class playerSelection : MonoBehaviour
             playertoSelect.text = "Player " + (temp_counter + 1) + " Select";
             RewiredObject.RewiredPlayerIds = new int[1] { temp_counter };
         }
+		}
     }
 
     void OnLevelWasLoaded()
@@ -59,6 +68,7 @@ public class playerSelection : MonoBehaviour
                 playerStarts[rnd] = temp;
             }
             players = new GameObject[numPlayers];
+			heads = new GameObject[numPlayers];
             playerCameras = new Camera[numPlayers];
             for (int i = 0; i < numPlayers; i++)
             {
@@ -69,6 +79,8 @@ public class playerSelection : MonoBehaviour
                 playerCameras[i].GetComponent<CameraController>().playerId = i;
                 playerCameras[i].GetComponent<CameraController>().player = players[i].transform;
                 players[i].GetComponent<ArmadilloController>().setRewiredPlayer();
+				heads[i] =Instantiate(hatPrefabs[i], playerStarts[i].transform.position, playerStarts[i].transform.rotation);
+				players[i].GetComponentInChildren<Head>().head = heads[i];
             }
             setCameraView();
         }
