@@ -95,6 +95,11 @@ public class ArmadilloController : MonoBehaviour
             playerCamera.cameraAngleMaxY = 40f;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+
         //GroundParticle();
 
         m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxSpeed); // maxspeed controller

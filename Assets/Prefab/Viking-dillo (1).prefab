@@ -57,6 +57,8 @@ GameObject:
   - component: {fileID: 135909119320958208}
   - component: {fileID: 54390640104868108}
   - component: {fileID: 114518345327485496}
+  - component: {fileID: 114749827867403186}
+  - component: {fileID: 114003186376648484}
   m_Layer: 0
   m_Name: Viking-dillo (1)
   m_TagString: Untagged
@@ -97,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834789169945886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.09, y: 1.29, z: -220.3528}
+  m_LocalPosition: {x: 45.270607, y: 2.5241027, z: -2417.3542}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4585332833654230}
@@ -215,6 +217,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114003186376648484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834789169945886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3981e1217d0cfef41a412ddb24b462f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p_timeElapsed: {fileID: 0}
 --- !u!114 &114518345327485496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,11 +242,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId: 2
   m_camera: {fileID: 0}
-  speed: 100
-  turnSpeed: 40
+  speed: 85
+  turnSpeed: 110
   m_jumpForce: 2000
   m_isGrounded: 0
-  groundparticleobj: {fileID: 0}
+  groundparticleobj: {fileID: 100000, guid: 98c58c8dd46640c49bb5f557afafea7c, type: 2}
+  boost: {fileID: 0}
+  maxSpeed: 200
+  particles1: {fileID: 100000, guid: 9e395b639b7725a419497c1bac9a23ac, type: 2}
+  m_hasAirJumped: 0
+  m_airJumpForce: 9000
+  m_airJumpHeight: 0
+--- !u!114 &114749827867403186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834789169945886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e94ef03281eb045bdb5df6b4301e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDistance: {fileID: 0}
 --- !u!135 &135909119320958208
 SphereCollider:
   m_ObjectHideFlags: 1

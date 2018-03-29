@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 54006266481541380}
   - component: {fileID: 135732826657374658}
   - component: {fileID: 114841598151021496}
+  - component: {fileID: 114847923149243622}
+  - component: {fileID: 114268175189574396}
   m_Layer: 0
   m_Name: Samurai-dillo 1
   m_TagString: Player
@@ -158,6 +160,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 0}
+--- !u!114 &114268175189574396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018692044446598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3981e1217d0cfef41a412ddb24b462f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p_timeElapsed: {fileID: 0}
 --- !u!114 &114841598151021496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,9 +190,24 @@ MonoBehaviour:
   m_jumpForce: 2000
   m_isGrounded: 0
   groundparticleobj: {fileID: 100000, guid: 98c58c8dd46640c49bb5f557afafea7c, type: 2}
+  boost: {fileID: 0}
   maxSpeed: 200
+  particles1: {fileID: 100000, guid: 9e395b639b7725a419497c1bac9a23ac, type: 2}
+  m_hasAirJumped: 0
   m_airJumpForce: 9000
   m_airJumpHeight: 0
+--- !u!114 &114847923149243622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018692044446598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e94ef03281eb045bdb5df6b4301e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDistance: {fileID: 0}
 --- !u!135 &135732826657374658
 SphereCollider:
   m_ObjectHideFlags: 1

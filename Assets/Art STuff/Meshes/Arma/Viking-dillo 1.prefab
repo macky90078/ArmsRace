@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 54470333873892820}
   - component: {fileID: 135163507135476582}
   - component: {fileID: 114313501964962688}
+  - component: {fileID: 114497332575187210}
+  - component: {fileID: 114771958451969742}
   m_Layer: 0
   m_Name: Viking-dillo 1
   m_TagString: Player
@@ -176,9 +178,36 @@ MonoBehaviour:
   m_jumpForce: 2000
   m_isGrounded: 0
   groundparticleobj: {fileID: 100000, guid: 98c58c8dd46640c49bb5f557afafea7c, type: 2}
+  boost: {fileID: 0}
   maxSpeed: 200
+  particles1: {fileID: 100000, guid: 9e395b639b7725a419497c1bac9a23ac, type: 2}
+  m_hasAirJumped: 0
   m_airJumpForce: 9000
   m_airJumpHeight: 0
+--- !u!114 &114497332575187210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172341542610770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e94ef03281eb045bdb5df6b4301e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDistance: {fileID: 0}
+--- !u!114 &114771958451969742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172341542610770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3981e1217d0cfef41a412ddb24b462f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p_timeElapsed: {fileID: 0}
 --- !u!135 &135163507135476582
 SphereCollider:
   m_ObjectHideFlags: 1

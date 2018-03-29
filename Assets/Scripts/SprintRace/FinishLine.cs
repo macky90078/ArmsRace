@@ -81,8 +81,8 @@ public class FinishLine : MonoBehaviour
                 }
 
                 playerCam = other.GetComponent<ArmadilloController>().m_camera.GetComponent<CameraController>();
-                playerCam.cameraAngleMinY = -360f;
-                playerCam.cameraAngleMaxY = 360f;
+                playerCam.cameraAngleMinY = -36000f;
+                playerCam.cameraAngleMaxY = 36000f;
             }
 
             if (_playersFinished == (_numPlayers - 1))
