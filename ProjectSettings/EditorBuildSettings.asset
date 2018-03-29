@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Mack.unity
     guid: a75448d4915846d4aa2addfa5e94aafe
+  - enabled: 1
+    path: Assets/_Scenes/Menu.unity
+    guid: e95d01597c9643f48a6c9406fdfcd17b
