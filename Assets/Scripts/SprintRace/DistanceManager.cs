@@ -64,19 +64,19 @@ public class DistanceManager : MonoBehaviour
         }
 
         if (closest.GetComponent<ArmadilloController>().playerId == 0)
-        p1_pos.text = "Place: 1st!";
+        p1_pos.text = "1st";
         //else p1_pos.text = "Place: --";
 
         if (closest.GetComponent<ArmadilloController>().playerId == 1)
-        p2_pos.text = "Place: 1st!";
+        p2_pos.text = "1st";
         //else p2_pos.text = "Place: --";
 
         if (closest.GetComponent<ArmadilloController>().playerId == 2)
-        p3_pos.text = "Place: 1st!";
+        p3_pos.text = "1st";
         //else p3_pos.text = "Place: --";
 
         if (closest.GetComponent<ArmadilloController>().playerId == 3)
-        p4_pos.text = "Place: 1st!";
+        p4_pos.text = "1st";
         //else p4_pos.text = "Place: --";
     }
 
@@ -101,19 +101,19 @@ public class DistanceManager : MonoBehaviour
         }
 
         if (closest2.GetComponent<ArmadilloController>().playerId == 0)
-            p1_pos.text = "Place: 2nd!";
+            p1_pos.text = "2nd";
         //else p1_pos.text = "Place: --";
 
         if (closest2.GetComponent<ArmadilloController>().playerId == 1)
-            p2_pos.text = "Place: 2nd!";
+            p2_pos.text = "2nd";
         //else p2_pos.text = "Place: --";
 
         if (closest2.GetComponent<ArmadilloController>().playerId == 2)
-            p3_pos.text = "Place: 2nd!";
+            p3_pos.text = "2nd";
         //else p3_pos.text = "Place: --";
 
         if (closest2.GetComponent<ArmadilloController>().playerId == 3)
-            p4_pos.text = "Place: 2nd!";
+            p4_pos.text = "2nd";
         //else p4_pos.text = "Place: --";
     }
 
@@ -138,19 +138,19 @@ public class DistanceManager : MonoBehaviour
         }
 
         if (closest3.GetComponent<ArmadilloController>().playerId == 0)
-            p1_pos.text = "Place: 3rd!";
+            p1_pos.text = "3rd";
         //else p1_pos.text = "Place: --";
 
         if (closest3.GetComponent<ArmadilloController>().playerId == 1)
-            p2_pos.text = "Place: 3rd!";
+            p2_pos.text = "3rd";
         //else p2_pos.text = "Place: --";
 
         if (closest3.GetComponent<ArmadilloController>().playerId == 2)
-            p3_pos.text = "Place: 3rd!";
+            p3_pos.text = "3rd";
         //else p3_pos.text = "Place: --";
 
         if (closest3.GetComponent<ArmadilloController>().playerId == 3)
-            p4_pos.text = "Place: 3rd!";
+            p4_pos.text = "3rd";
         //else p4_pos.text = "Place: --";
     }
 
@@ -175,19 +175,19 @@ public class DistanceManager : MonoBehaviour
         }
 
         if (closest4.GetComponent<ArmadilloController>().playerId == 0)
-            p1_pos.text = "Place: 4th!";
+            p1_pos.text = "4th";
         //else p1_pos.text = "Place: --";
 
         if (closest4.GetComponent<ArmadilloController>().playerId == 1)
-            p2_pos.text = "Place: 4th!";
+            p2_pos.text = "4th";
         //else p2_pos.text = "Place: --";
 
         if (closest4.GetComponent<ArmadilloController>().playerId == 2)
-            p3_pos.text = "Place: 4th!";
+            p3_pos.text = "4th";
         //else p3_pos.text = "Place: --";
 
         if (closest4.GetComponent<ArmadilloController>().playerId == 3)
-            p4_pos.text = "Place: 4th!";
+            p4_pos.text = "4th";
         //else p4_pos.text = "Place: --";
     }
 

@@ -22,6 +22,7 @@ public class FinishLine : MonoBehaviour
     public Text text_p2;
     public Text text_p3;
     public Text text_p4;
+    public Text text_p5;
 
     private int _firstPlace = -1;// Player that arrives first
     private int _secondPlace = -1; // Player that arrives second
@@ -44,7 +45,7 @@ public class FinishLine : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_firstPlace + ", "+ _secondPlace + ", " + _thirdPlace);
+        //Debug.Log(_firstPlace + ", "+ _secondPlace + ", " + _thirdPlace);
     }
 	
     void OnTriggerEnter(Collider other)
@@ -60,18 +61,21 @@ public class FinishLine : MonoBehaviour
                     _firstPlace = _playerID;
                     FirstPlaceAnnouncement();
                     _playersFinished++;
+                    EnableText();
                 }
                 else if (_playersFinished == 1 && (_playerID != _firstPlace))
                 {
                     _secondPlace = _playerID;
                     SecondPlaceAnnouncement();
                     _playersFinished++;
+                    EnableText();
                 }
                 else if (_playersFinished == 2 && (_playerID != _firstPlace) && (_playerID != _secondPlace))
                 {
                     _thirdPlace = _playerID;
                     ThirdPlaceAnnouncement();
                     _playersFinished++;
+                    EnableText();
                 }
             }
 
@@ -100,6 +104,8 @@ public class FinishLine : MonoBehaviour
             text_p1.enabled = false;
             text_p2.enabled = false;
         }
+
+        Debug.Log("Disable");
     }
 
     void EnableText()
@@ -122,6 +128,7 @@ public class FinishLine : MonoBehaviour
             text_p1.enabled = true;
             text_p2.enabled = true;
         }
+        Debug.Log("Enable");
     }
 
     public uint GetPlayersOnMap()
@@ -145,6 +152,7 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_firstPlace + 1) + " Finished 1st!";
         text_p3.text = "P" + (_firstPlace + 1) + " Finished 1st!";
         text_p4.text = "P" + (_firstPlace + 1) + " Finished 1st!";
+        Invoke("DisableText", 3f);
     }
 
     void SecondPlaceAnnouncement()
@@ -153,6 +161,7 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_secondPlace + 1) + " Finished 2nd!";
         text_p3.text = "P" + (_secondPlace + 1) + " Finished 2nd!";
         text_p4.text = "P" + (_secondPlace + 1) + " Finished 2nd!";
+        Invoke("DisableText", 3f);
     }
 
     void ThirdPlaceAnnouncement()
@@ -161,10 +170,12 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_thirdPlace + 1) + " Finished 3rd!";
         text_p3.text = "P" + (_thirdPlace + 1) + " Finished 3rd!";
         text_p4.text = "P" + (_thirdPlace + 1) + " Finished 3rd!";
+        Invoke("DisableText", 3f);
     }
 
     void ShowResults()
     {
+        DisableText(); 
         if (_numPlayers == 4)
         {
             text_p1.text =
@@ -183,9 +194,17 @@ public class FinishLine : MonoBehaviour
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
                "Third place: P" + (_thirdPlace + 1) + "!";
+            text_p5.text =
+               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+               "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+               "Third place: P" + (_thirdPlace + 1) + "!";
+                      
+                  
+           
         }
         else if (_numPlayers == 3)
         {
+            DisableText();
             text_p1.text =
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
@@ -198,17 +217,26 @@ public class FinishLine : MonoBehaviour
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
                "Third place: P" + (_thirdPlace + 1) + "!";
+            text_p5.text =
+               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+               "Second place: P" + (_secondPlace + 1) + "!" + "\n" +
+               "Third place: P" + (_thirdPlace + 1) + "!";
         }
         else if (_numPlayers == 2)
         {
+            DisableText();
             text_p1.text =
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!";
             text_p2.text =
                "First place: P" + (_firstPlace + 1) + "!" + "\n" +
                "Second place: P" + (_secondPlace + 1) + "!";
+            text_p5.text =
+               "First place: P" + (_firstPlace + 1) + "!" + "\n" +
+               "Second place: P" + (_secondPlace + 1) + "!" + "\n" 
+               ;
         }
-        Invoke("EndRace", 3);
+        Invoke("EndRace", 5);
     }
 
     void EndRace()
@@ -217,8 +245,11 @@ public class FinishLine : MonoBehaviour
         text_p2.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p3.text = "P" + (_firstPlace + 1) + " Wins!";
         text_p4.text = "P" + (_firstPlace + 1) + " Wins!";
+        text_p5.text = "P" + (_firstPlace + 1) + " Wins!";
         this.enabled = false;
     }
+
+   
 
     public int GetFirstPlace()
     {

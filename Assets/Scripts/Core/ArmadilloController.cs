@@ -89,7 +89,7 @@ public class ArmadilloController : MonoBehaviour
             m_rb.velocity = new Vector3(0, 0, 0);
         }
 
-        GroundParticle();
+        //GroundParticle();
 
         m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, maxSpeed); // maxspeed controller
     }
@@ -109,6 +109,7 @@ public class ArmadilloController : MonoBehaviour
 
         m_rb.AddForce(forceDirection.normalized * speed * (m_fVerticalInput));
         m_rb.AddForce(turnDirection.normalized * turnSpeed * (m_fHorizontalInput));
+        GroundParticle();
     }
  
 
