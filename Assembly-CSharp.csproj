@@ -211,6 +211,7 @@
      <Compile Include="Assets\Scripts\Core\PlatformMovement.cs" />
      <Compile Include="Assets\Scripts\Core\respawn_Script.cs" />
      <Compile Include="Assets\Scripts\Core\SpeedRingBoost.cs" />
+     <Compile Include="Assets\Scripts\Core\TimeElapsedToFinish.cs" />
      <Compile Include="Assets\Scripts\levelToLoad.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
