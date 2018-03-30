@@ -19,7 +19,7 @@ public class playerSelection : MonoBehaviour
     public int temp_counter = 0;
     public levelToLoad loadLevelScript;
     public Text playertoSelect;
-
+		public GameObject blackScreen;
     void awake()
     {
         RewiredObject = GetComponent<RewiredStandaloneInputModule>();
@@ -45,8 +45,11 @@ public class playerSelection : MonoBehaviour
 
         temp_counter++;
 
-        if (temp_counter == numPlayers)
+        if (temp_counter == numPlayers){
+			blackScreen.SetActive(true);
             loadLevelScript.load_Level();
+			
+		}
         else
         {
             playertoSelect.text = "Player " + (temp_counter + 1) + " Select";
@@ -82,6 +85,7 @@ public class playerSelection : MonoBehaviour
 				heads[i] =Instantiate(hatPrefabs[i], playerStarts[i].transform.position, playerStarts[i].transform.rotation);
 				players[i].GetComponentInChildren<Head>().head = heads[i];
             }
+
             setCameraView();
         }
     }
@@ -94,13 +98,14 @@ public class playerSelection : MonoBehaviour
                 playerCameras[0].rect = new Rect(0.0f, 0.0f, 1.0f, 1.0f);
                 break;
             case 2:
-                playerCameras[0].rect = new Rect(0.0f, .5f, 1.0f, .5f);
-                playerCameras[1].rect = new Rect(0.0f, 0, 1.0f, .5f);
+                playerCameras[0].rect = new Rect(0.0f, 0, .5f, 1);
+                playerCameras[1].rect = new Rect(0.5f, 0, .5f, 1);
                 break;
             case 3:
-                playerCameras[0].rect = new Rect(0, .5f, 1, .5f);
-                playerCameras[1].rect = new Rect(0, 0, .5f, .5f);
-                playerCameras[2].rect = new Rect(.5f, 0, .5f, .5f);
+                playerCameras[0].rect = new Rect(0, .5f, .5f, .5f);
+                playerCameras[1].rect = new Rect(.5f, .5f, .5f, .5f);
+                playerCameras[2].rect = new Rect(0, 0, .5f, .5f);
+				
                 break;
             case 4:
                 playerCameras[0].rect = new Rect(0, .5f, .5f, .5f);

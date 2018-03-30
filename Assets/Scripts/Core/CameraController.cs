@@ -32,13 +32,14 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         // Get the Rewired object for this player and keep it for the duration of the character's lifetime
-        playerControl = ReInput.players.GetPlayer(playerId);
+       // playerControl = ReInput.players.GetPlayer(playerId);
     }
 
     private void Start()
     {
         cameraTransform = transform;
         //player = GetComponent<Transform>();
+		playerControl = ReInput.players.GetPlayer(playerId);
     }
 
     private void Update()

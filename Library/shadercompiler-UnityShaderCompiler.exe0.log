@@ -1,2 +1,90 @@
-Base path: C:/Program Files/Unity2/Editor/Data
+Base path: C:/Program Files/Unity/Unity_1.2/Editor/Data
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=754 outsize=337 ok=1
+Cmd: preprocess
+  insize=3079 outsize=301 ok=1
+Cmd: preprocess
+  insize=2963 outsize=388 ok=1
+Cmd: preprocess
+  insize=2542 outsize=276 ok=1
+Cmd: preprocess
+  insize=2582 outsize=368 ok=1
+Cmd: preprocess
+  insize=412 outsize=409 ok=1
+Cmd: preprocess
+  insize=942 outsize=468 ok=1
+Cmd: preprocess
+  insize=1224 outsize=357 ok=1
+Cmd: preprocess
+  insize=22393 outsize=3778 ok=1
+Cmd: compileCompute
+  api=4 insize=1382 outsize=2177 ok=1
+Cmd: preprocess
+  insize=3618 outsize=353 ok=1
+Cmd: preprocess
+  insize=5780 outsize=1782 ok=1
+Cmd: compileCompute
+  api=4 insize=3176 outsize=4809 ok=1
+Cmd: preprocess
+  insize=2188 outsize=281 ok=1
+Cmd: preprocess
+  insize=2273 outsize=1010 ok=1
+Cmd: preprocess
+  insize=514 outsize=1316 ok=1
+Cmd: preprocess
+  insize=31310 outsize=1466 ok=1
+Cmd: preprocess
+  insize=2601 outsize=1306 ok=1
+Cmd: preprocess
+  insize=7066 outsize=798 ok=1
+Cmd: preprocess
+  insize=1069 outsize=1436 ok=1
+Cmd: preprocess
+  insize=995 outsize=314 ok=1
+Cmd: preprocess
+  insize=934 outsize=279 ok=1
+Cmd: preprocess
+  insize=317 outsize=314 ok=1
+Cmd: preprocess
+  insize=6596 outsize=468 ok=1
+Cmd: preprocess
+  insize=826 outsize=398 ok=1
+Cmd: preprocess
+  insize=1868 outsize=283 ok=1
+Cmd: preprocess
+  insize=11336 outsize=651 ok=1
+Cmd: preprocess
+  insize=2431 outsize=468 ok=1
+Cmd: preprocess
+  insize=4145 outsize=528 ok=1
+Cmd: preprocess
+  insize=561 outsize=231 ok=1
+Cmd: compileCompute
+  api=4 insize=1480 outsize=1909 ok=1
+Cmd: preprocess
+  insize=5415 outsize=2549 ok=1
+Cmd: preprocess
+  insize=1652 outsize=346 ok=1
+Cmd: preprocess
+  insize=797 outsize=438 ok=1
+Cmd: preprocess
+  insize=1009 outsize=449 ok=1
+Cmd: preprocess
+  insize=1460 outsize=399 ok=1
+Cmd: preprocess
+  insize=5130 outsize=3778 ok=1
+Cmd: preprocess
+  insize=3309 outsize=229 ok=1
+Cmd: preprocess
+  insize=894 outsize=358 ok=1
+Cmd: compileCompute
+  api=4 insize=2283 outsize=1365 ok=1
+Cmd: preprocess
+  insize=3314 outsize=1462 ok=1
+Cmd: preprocess
+  insize=1893 outsize=902 ok=1
+Cmd: preprocess
+  insize=1525 outsize=387 ok=1
+Cmd: preprocess
+  insize=3273 outsize=1569 ok=1
