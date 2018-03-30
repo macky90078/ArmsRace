@@ -17,12 +17,29 @@ public class TimeElapsedToFinish : MonoBehaviour
     public Text p_timeElapsed;
     private float _elapsedTimeSec;
     private int _elapsedTimeMin;
+    private ArmadilloController playerRef;
+    private int _playerID;
 
     // Use this for initialization
     void Start()
     {
+        playerRef = GetComponent<ArmadilloController>();
+        _playerID = playerRef.playerId;
+        AssignTextElems();
         _elapsedTimeSec = 0;
         _elapsedTimeMin = 0;
+    }
+
+    void AssignTextElems()
+    {
+        if (_playerID == 0)
+        { p_timeElapsed = GameObject.Find("Text_P1_elapTime").GetComponent<Text>(); }
+        else if (_playerID == 1)
+        { p_timeElapsed = GameObject.Find("Text_P2_elapTime").GetComponent<Text>(); }
+        else if (_playerID == 2)
+        { p_timeElapsed = GameObject.Find("Text_P3_elapTime").GetComponent<Text>(); }
+        else if (_playerID == 3)
+        { p_timeElapsed = GameObject.Find("Text_P3_elapTime").GetComponent<Text>(); }
     }
 
     // Update is called once per frame
@@ -30,7 +47,7 @@ public class TimeElapsedToFinish : MonoBehaviour
     {
         _elapsedTimeSec += Time.deltaTime;
         p_timeElapsed.text = "Time: " + _elapsedTimeMin + ":"
-            + _elapsedTimeSec.ToString("f0") + " s";
+            + _elapsedTimeSec.ToString("f0") + "s";
 
         if (_elapsedTimeSec >= 59.0f)
         {

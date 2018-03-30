@@ -106,12 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
+  currentX: 0
+  currentY: -20
+  sensitivityX: 4
+  sensitivityY: 1
+  cameraAngleMinY: -40
+  cameraAngleMaxY: 40
   player: {fileID: 0}
   cameraTransform: {fileID: 0}
-  cameraAngleMinY: -35
-  cameraAngleMaxY: 50
-  cameraDistance: 10
-  cameraOffset: {x: 0, y: 1, z: 5}
+  cameraAngleMinX: 15
+  cameraAngleMaxX: 15
+  cameraDistance: 15
+  cameraOffset: {x: 0, y: 50, z: 10}
   smoothSpeed: 0.125
   m_cameraRotationSpeed: 2
 --- !u!124 &124995746993637782
