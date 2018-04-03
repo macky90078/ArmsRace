@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: f9f6925c2989d28418e1163e55fc40ae
+timeCreated: 1522714495
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Base_ArmadilloV5:Armor
+    100002: Base_ArmadilloV5:Body1
+    100004: Base_ArmadilloV5:Geos
+    100006: Base_ArmadilloV5:Head
+    100008: Base_ArmadilloV5:HeadEnd
+    100010: Base_ArmadilloV5:Hips
+    100012: Base_ArmadilloV5:Joints
+    100014: Base_ArmadilloV5:L_Ear_End
+    100016: Base_ArmadilloV5:L_Ear_Mid
+    100018: Base_ArmadilloV5:L_Ear_Mid1
+    100020: Base_ArmadilloV5:L_Ear_Start
+    100022: Base_ArmadilloV5:L_Ear_Start 1
+    100024: Base_ArmadilloV5:L_Eye
+    100026: Base_ArmadilloV5:L_Eye 1
+    100028: Base_ArmadilloV5:L_EyeEnd
+    100030: Base_ArmadilloV5:Left_Arm
+    100032: Base_ArmadilloV5:Left_Elbow
+    100034: Base_ArmadilloV5:Left_Finger_1
+    100036: Base_ArmadilloV5:Left_Finger_1_End
+    100038: Base_ArmadilloV5:Left_Finger_2
+    100040: Base_ArmadilloV5:Left_Finger_2_End
+    100042: Base_ArmadilloV5:Left_Foot
+    100044: Base_ArmadilloV5:Left_Foot_End
+    100046: Base_ArmadilloV5:Left_Knee
+    100048: Base_ArmadilloV5:Left_Leg
+    100050: Base_ArmadilloV5:Left_Paw
+    100052: Base_ArmadilloV5:Left_Paw_End
+    100054: Base_ArmadilloV5:Left_Toe_1
+    100056: Base_ArmadilloV5:Left_Toe_1_End
+    100058: Base_ArmadilloV5:Left_Toe_2
+    100060: Base_ArmadilloV5:Left_Toe_2_End
+    100062: Base_ArmadilloV5:Neck
+    100064: Base_ArmadilloV5:Plate1
+    100066: Base_ArmadilloV5:Plate10
+    100068: Base_ArmadilloV5:Plate11
+    100070: Base_ArmadilloV5:Plate12
+    100072: Base_ArmadilloV5:Plate13
+    100074: Base_ArmadilloV5:Plate2
+    100076: Base_ArmadilloV5:Plate3
+    100078: Base_ArmadilloV5:Plate4
+    100080: Base_ArmadilloV5:Plate5
+    100082: Base_ArmadilloV5:Plate6
+    100084: Base_ArmadilloV5:Plate7
+    100086: Base_ArmadilloV5:Plate8
+    100088: Base_ArmadilloV5:Plate9
+    100090: Base_ArmadilloV5:R_Ear_End
+    100092: Base_ArmadilloV5:R_Ear_Mid
+    100094: Base_ArmadilloV5:R_Ear_Mid1
+    100096: Base_ArmadilloV5:R_Ear_Start
+    100098: Base_ArmadilloV5:R_Ear_Start1
+    100100: Base_ArmadilloV5:R_Eye
+    100102: Base_ArmadilloV5:R_Eye 1
+    100104: Base_ArmadilloV5:R_EyeEnd
+    100106: Base_ArmadilloV5:Right_Arm
+    100108: Base_ArmadilloV5:Right_Elbow
+    100110: Base_ArmadilloV5:Right_Finger_1
+    100112: Base_ArmadilloV5:Right_Finger_1_End
+    100114: Base_ArmadilloV5:Right_Finger_2
+    100116: Base_ArmadilloV5:Right_Finger_2_End
+    100118: Base_ArmadilloV5:Right_Foot
+    100120: Base_ArmadilloV5:Right_Foot_End
+    100122: Base_ArmadilloV5:Right_Knee
+    100124: Base_ArmadilloV5:Right_Leg
+    100126: Base_ArmadilloV5:Right_Paw
+    100128: Base_ArmadilloV5:Right_Paw_End
+    100130: Base_ArmadilloV5:Right_Toe_1
+    100132: Base_ArmadilloV5:Right_Toe_1_End
+    100134: Base_ArmadilloV5:Right_Toe_2
+    100136: Base_ArmadilloV5:Right_Toe_2_End
+    100138: Base_ArmadilloV5:Snout
+    100140: Base_ArmadilloV5:Spine1
+    100142: Base_ArmadilloV5:SpineEnd
+    100144: Base_ArmadilloV5:SpineRoot
+    100146: Base_ArmadilloV5:Tail_1
+    100148: Base_ArmadilloV5:Tail_2
+    100150: Base_ArmadilloV5:Tail_3
+    100152: Base_ArmadilloV5:Tail_4
+    100154: Base_ArmadilloV5:Tail_5
+    100156: Base_ArmadilloV5:Tail_6
+    100158: Base_ArmadilloV5:Tail_7
+    100160: Base_ArmadilloV5:Tail_End
+    100162: //RootNode
+    400000: Base_ArmadilloV5:Armor
+    400002: Base_ArmadilloV5:Body1
+    400004: Base_ArmadilloV5:Geos
+    400006: Base_ArmadilloV5:Head
+    400008: Base_ArmadilloV5:HeadEnd
+    400010: Base_ArmadilloV5:Hips
+    400012: Base_ArmadilloV5:Joints
+    400014: Base_ArmadilloV5:L_Ear_End
+    400016: Base_ArmadilloV5:L_Ear_Mid
+    400018: Base_ArmadilloV5:L_Ear_Mid1
+    400020: Base_ArmadilloV5:L_Ear_Start
+    400022: Base_ArmadilloV5:L_Ear_Start 1
+    400024: Base_ArmadilloV5:L_Eye
+    400026: Base_ArmadilloV5:L_Eye 1
+    400028: Base_ArmadilloV5:L_EyeEnd
+    400030: Base_ArmadilloV5:Left_Arm
+    400032: Base_ArmadilloV5:Left_Elbow
+    400034: Base_ArmadilloV5:Left_Finger_1
+    400036: Base_ArmadilloV5:Left_Finger_1_End
+    400038: Base_ArmadilloV5:Left_Finger_2
+    400040: Base_ArmadilloV5:Left_Finger_2_End
+    400042: Base_ArmadilloV5:Left_Foot
+    400044: Base_ArmadilloV5:Left_Foot_End
+    400046: Base_ArmadilloV5:Left_Knee
+    400048: Base_ArmadilloV5:Left_Leg
+    400050: Base_ArmadilloV5:Left_Paw
+    400052: Base_ArmadilloV5:Left_Paw_End
+    400054: Base_ArmadilloV5:Left_Toe_1
+    400056: Base_ArmadilloV5:Left_Toe_1_End
+    400058: Base_ArmadilloV5:Left_Toe_2
+    400060: Base_ArmadilloV5:Left_Toe_2_End
+    400062: Base_ArmadilloV5:Neck
+    400064: Base_ArmadilloV5:Plate1
+    400066: Base_ArmadilloV5:Plate10
+    400068: Base_ArmadilloV5:Plate11
+    400070: Base_ArmadilloV5:Plate12
+    400072: Base_ArmadilloV5:Plate13
+    400074: Base_ArmadilloV5:Plate2
+    400076: Base_ArmadilloV5:Plate3
+    400078: Base_ArmadilloV5:Plate4
+    400080: Base_ArmadilloV5:Plate5
+    400082: Base_ArmadilloV5:Plate6
+    400084: Base_ArmadilloV5:Plate7
+    400086: Base_ArmadilloV5:Plate8
+    400088: Base_ArmadilloV5:Plate9
+    400090: Base_ArmadilloV5:R_Ear_End
+    400092: Base_ArmadilloV5:R_Ear_Mid
+    400094: Base_ArmadilloV5:R_Ear_Mid1
+    400096: Base_ArmadilloV5:R_Ear_Start
+    400098: Base_ArmadilloV5:R_Ear_Start1
+    400100: Base_ArmadilloV5:R_Eye
+    400102: Base_ArmadilloV5:R_Eye 1
+    400104: Base_ArmadilloV5:R_EyeEnd
+    400106: Base_ArmadilloV5:Right_Arm
+    400108: Base_ArmadilloV5:Right_Elbow
+    400110: Base_ArmadilloV5:Right_Finger_1
+    400112: Base_ArmadilloV5:Right_Finger_1_End
+    400114: Base_ArmadilloV5:Right_Finger_2
+    400116: Base_ArmadilloV5:Right_Finger_2_End
+    400118: Base_ArmadilloV5:Right_Foot
+    400120: Base_ArmadilloV5:Right_Foot_End
+    400122: Base_ArmadilloV5:Right_Knee
+    400124: Base_ArmadilloV5:Right_Leg
+    400126: Base_ArmadilloV5:Right_Paw
+    400128: Base_ArmadilloV5:Right_Paw_End
+    400130: Base_ArmadilloV5:Right_Toe_1
+    400132: Base_ArmadilloV5:Right_Toe_1_End
+    400134: Base_ArmadilloV5:Right_Toe_2
+    400136: Base_ArmadilloV5:Right_Toe_2_End
+    400138: Base_ArmadilloV5:Snout
+    400140: Base_ArmadilloV5:Spine1
+    400142: Base_ArmadilloV5:SpineEnd
+    400144: Base_ArmadilloV5:SpineRoot
+    400146: Base_ArmadilloV5:Tail_1
+    400148: Base_ArmadilloV5:Tail_2
+    400150: Base_ArmadilloV5:Tail_3
+    400152: Base_ArmadilloV5:Tail_4
+    400154: Base_ArmadilloV5:Tail_5
+    400156: Base_ArmadilloV5:Tail_6
+    400158: Base_ArmadilloV5:Tail_7
+    400160: Base_ArmadilloV5:Tail_End
+    400162: //RootNode
+    4300000: Base_ArmadilloV5:L_Eye
+    4300002: Base_ArmadilloV5:R_Eye
+    4300004: Base_ArmadilloV5:Body1
+    4300006: Base_ArmadilloV5:Armor
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Base_ArmadilloV5:Armor
+    13700002: Base_ArmadilloV5:Body1
+    13700004: Base_ArmadilloV5:L_Eye
+    13700006: Base_ArmadilloV5:R_Eye
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
